@@ -22,7 +22,7 @@ There are two ways to use StyleDoc in your project:
 
 ```bash
 # Clone the repository to examine the files
-git clone https://github.com/yourusername/styledoc.git
+git clone https://github.com/peacenode/styledoc.git
 ```
 
 ### Recommended File Structure
