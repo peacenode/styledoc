@@ -45,7 +45,7 @@ export function EventCard({
       {...props}
     >
       <div className="flex items-start justify-between">
-        <div className="flex gap-3">
+        <div className="flex gap-3 min-w-0 flex-1">
           {/* Icon/Image section - only shown if iconSrc is provided */}
           {iconSrc && (
             <div className="flex-shrink-0 h-14 w-14 overflow-hidden rounded-[2px]">
@@ -59,13 +59,13 @@ export function EventCard({
           )}
           
           {/* Content section */}
-          <div className="flex flex-col">
+          <div className="flex flex-col min-w-0 flex-1">
             <span className="text-sans-sm font-semibold">{title}</span>
-            <span className="text-muted-foreground text-sans-sm">{app}</span>
+            <span className="text-muted-foreground text-sans-sm truncate">{app}</span>
             
             {/* Social preview */}
             {socialPreviewProps && (
-              <div className="mt-1">
+              <div className="mt-1 max-w-full">
                 <SocialPreview {...socialPreviewProps} />
               </div>
             )}
@@ -73,13 +73,13 @@ export function EventCard({
         </div>
         
         {/* Action section */}
-        <div className="flex flex-col items-center gap-1">
-          <Button variant="secondary" size="sm" className="text-primary" onClick={onCtaClick}>
+        <div className="flex flex-col items-center gap-1 ml-3 flex-shrink-0">
+          <Button variant="secondary" size="sm" className="text-primary whitespace-nowrap" onClick={onCtaClick}>
             {ctaText}
           </Button>
           
           {xp !== undefined && (
-            <span className="text-muted-foreground text-sans-xs">+{xp}XP</span>
+            <span className="text-muted-foreground text-sans-xs whitespace-nowrap">+{xp}XP</span>
           )}
         </div>
       </div>

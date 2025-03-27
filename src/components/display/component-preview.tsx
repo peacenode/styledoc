@@ -82,7 +82,7 @@ export function ComponentPreview({
           </pre>
         </div>
       ) : (
-        <div className="flex flex-wrap gap-4 justify-center p-6">
+        <div className="flex flex-wrap gap-4 justify-center p-2">
           {children}
         </div>
       )}

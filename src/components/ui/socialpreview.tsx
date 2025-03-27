@@ -8,7 +8,7 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import makeBlockie from 'ethereum-blockies-base64'
 
 const socialPreviewVariants = cva(
-  "flex items-center gap-1",
+  "flex items-center gap-1.5",
   {
     variants: {
       status: {
@@ -43,7 +43,7 @@ function SocialPreview({
   const renderAvatars = () => {
     if (status === "unclaimed") {
       return (
-        <CircleAlert className="w-4 h-4 text-primary" />
+        <CircleAlert className="w-4 h-4 text-primary flex-shrink-0" />
       )
     }
 
@@ -62,7 +62,7 @@ function SocialPreview({
         <Avatar 
           key={`avatar-${i}`} 
           className={cn(
-            "w-6 h-6 border-2 border-background",
+            "w-6 h-6 border-2 border-background flex-shrink-0",
             i !== 0 && "-ml-2"
           )}
           style={{
@@ -80,54 +80,54 @@ function SocialPreview({
     switch (status) {
       case "unclaimed":
         return (
-          <>
+          <div className="flex items-center whitespace-nowrap">
             <span className="text-sans-xs font-normal text-muted-foreground">claim first</span>
-          </>
+          </div>
         )
       case "you":
         return (
-          <>
-            <span className="text-sans-xs font-normal text-muted-foreground">completed by</span>
-            <span className="text-sans-xs font-semibold text-foreground">you</span>
-          </>
+          <div className="flex items-center whitespace-nowrap">
+            <span className="text-sans-xs font-normal text-muted-foreground hidden min-[300px]:inline">completed by</span>
+            <span className="text-sans-xs font-semibold text-foreground min-[300px]:ml-1 flex-shrink-0">you</span>
+          </div>
         )
       case "one":
         return (
-          <>
-            <span className="text-sans-xs font-normal text-muted-foreground">completed by</span>
-            <span className="text-sans-xs font-semibold text-foreground">1 member</span>
-          </>
+          <div className="flex items-center whitespace-nowrap">
+            <span className="text-sans-xs font-normal text-muted-foreground hidden min-[300px]:inline">completed by</span>
+            <span className="text-sans-xs font-semibold text-foreground min-[300px]:ml-1 flex-shrink-0">1 member</span>
+          </div>
         )
       case "two":
         return (
-          <>
-            <span className="text-sans-xs font-normal text-muted-foreground">completed by</span>
-            <span className="text-sans-xs font-semibold text-foreground">2 members</span>
-          </>
+          <div className="flex items-center whitespace-nowrap">
+            <span className="text-sans-xs font-normal text-muted-foreground hidden min-[300px]:inline">completed by</span>
+            <span className="text-sans-xs font-semibold text-foreground min-[300px]:ml-1 flex-shrink-0">2 members</span>
+          </div>
         )
       case "many":
         return (
-          <>
-            <span className="text-sans-xs font-normal text-muted-foreground">completed by</span>
-            <span className="text-sans-xs font-semibold text-foreground">3 members</span>
-          </>
+          <div className="flex items-center whitespace-nowrap">
+            <span className="text-sans-xs font-normal text-muted-foreground hidden min-[300px]:inline">completed by</span>
+            <span className="text-sans-xs font-semibold text-foreground min-[300px]:ml-1 flex-shrink-0">3 members</span>
+          </div>
         )
       case "many-plus":
         return (
-          <>
-            <span className="text-sans-xs font-normal text-muted-foreground">completed by</span>
-            <span className="text-sans-xs font-semibold text-foreground">{count || 0} members</span>
-          </>
+          <div className="flex items-center whitespace-nowrap">
+            <span className="text-sans-xs font-normal text-muted-foreground hidden min-[300px]:inline">completed by</span>
+            <span className="text-sans-xs font-semibold text-foreground min-[300px]:ml-1 flex-shrink-0">{count || 0} members</span>
+          </div>
         )
       default:
-        return ""
+        return null
     }
   }
 
   return (
     <div
       data-slot="social-preview"
-      className={cn(socialPreviewVariants({ status, className }))}
+      className={cn(socialPreviewVariants({ status, className }), "max-w-full")}
       {...props}
     >
       {renderAvatars()}
