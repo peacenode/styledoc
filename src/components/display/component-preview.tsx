@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
+import { Copy, Check } from "lucide-react";
 
 interface ComponentPreviewProps {
   title: string;
@@ -38,14 +39,15 @@ export function ComponentPreview({ title, code, children }: ComponentPreviewProp
 
       {showCode ? (
         <div className="relative bg-muted/50 p-4 rounded-lg">
-          <Button
+          <span
             onClick={copyToClipboard}
-            size="sm"
-            className="absolute right-4 top-4"
-            variant="outline"
+            className="absolute right-12 top-4 h-8 w-8 flex items-center justify-center cursor-pointer text-muted-foreground hover:text-foreground transition-colors duration-300"
+            aria-label={copied ? "Copied" : "Copy code"}
+            role="button"
+            tabIndex={0}
           >
-            {copied ? "Copied" : "Copy"}
-          </Button>
+            {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+          </span>
           <pre className="mt-4 max-h-[400px] overflow-auto rounded-lg p-4 text-sm">
             <code className="text-muted-foreground">{code}</code>
           </pre>
