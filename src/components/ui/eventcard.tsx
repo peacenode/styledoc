@@ -60,7 +60,7 @@ export function EventCard({
           
           {/* Content section */}
           <div className="flex flex-col">
-            <span className="text-sans-xl font-semibold">{title}</span>
+            <span className="text-sans-base font-semibold">{title}</span>
             <span className="text-muted-foreground text-sans-sm">{app}</span>
             
             {/* Social preview */}
@@ -74,7 +74,7 @@ export function EventCard({
         
         {/* Action section */}
         <div className="flex flex-col items-center gap-2">
-          <Button onClick={onCtaClick}>
+          <Button variant="secondary" onClick={onCtaClick}>
             {ctaText}
           </Button>
           

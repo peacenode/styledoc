@@ -38,7 +38,7 @@ export function ComponentPreview({ title, code, children }: ComponentPreviewProp
       </div>
 
       {showCode ? (
-        <div className="relative bg-muted/50 p-4 rounded-lg">
+        <div className="relative bg-muted bg-opacity-50 p-4 rounded-lg">
           <span
             onClick={copyToClipboard}
             className="absolute right-12 top-4 h-8 w-8 flex items-center justify-center cursor-pointer text-muted-foreground hover:text-foreground transition-colors duration-300"

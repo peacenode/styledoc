@@ -19,7 +19,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-full !text-sans-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -27,16 +27,16 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input hover:bg-accent hover:text-accent-foreground",
+          "border border-primary text-primary hover:bg-primary hover:text-background",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+          "bg-secondary text-primary font-semibold hover:bg-secondary/80",
+        ghost: "hover:bg-secondary transition-colors duration-300",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
         default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        sm: "h-9 rounded-full px-3",
+        lg: "rounded-full px-12 py-4 !text-sans-base text-background",
         icon: "h-10 w-10",
       },
     },
@@ -75,17 +75,17 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 !text-sans-xs transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default",
   {
     variants: {
       variant: {
         default:
-          "border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80",
+          "border-transparent bg-foreground text-background",
         secondary:
-          "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "border-transparent bg-secondary text-secondary-foreground",
         destructive:
-          "border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80",
-        outline: "text-foreground",
+          "border-transparent bg-destructive text-destructive-foreground",
+        outline: "text-muted-foreground",
       },
     },
     defaultVariants: {
@@ -301,8 +301,9 @@ export function EventCard({
 }`;
 
   return (
-    <div className="flex min-h-screen flex-col items-center p-8 bg-background">
-      <main className="w-full max-w-6xl space-y-16">
+    <main className="container mx-auto py-6 space-y-10">
+      {/* Components Section */}
+      <section className="space-y-16">
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Color</h2>
           <ColorSpectrum />
@@ -335,26 +336,139 @@ export function EventCard({
         </section>
 
         <ComponentPreview title="Buttons" code={buttonCode}>
-          <Button variant="default">Default</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="outline">Outline</Button>
-          <Button variant="ghost">Ghost</Button>
-          <Button variant="link">Link</Button>
-          <Button variant="destructive">Destructive</Button>
+          <div className="space-y-8 max-w-3xl mx-auto">
+            {/* Variants */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-medium text-center">Button Variants</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center">
+                <div className="flex flex-col items-center gap-2">
+                  <Button variant="default">Default</Button>
+                  <span className="text-xs text-muted-foreground">Default</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Button variant="secondary">Secondary</Button>
+                  <span className="text-xs text-muted-foreground">Secondary</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Button variant="outline">Outline</Button>
+                  <span className="text-xs text-muted-foreground">Outline</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Button variant="ghost">Ghost</Button>
+                  <span className="text-xs text-muted-foreground">Ghost</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Button variant="link">Link</Button>
+                  <span className="text-xs text-muted-foreground">Link</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Button variant="destructive">Destructive</Button>
+                  <span className="text-xs text-muted-foreground">Destructive</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Sizes */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-medium text-center">Button Sizes</h3>
+              <div className="flex flex-wrap gap-4 justify-center items-end">
+                <div className="flex flex-col items-center gap-2">
+                  <Button size="sm">Small</Button>
+                  <span className="text-xs text-muted-foreground">Small</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Button size="default">Default</Button>
+                  <span className="text-xs text-muted-foreground">Default</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Button size="lg">Large</Button>
+                  <span className="text-xs text-muted-foreground">Large</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Button size="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                      <path d="M12 5v14M5 12h14" />
+                    </svg>
+                  </Button>
+                  <span className="text-xs text-muted-foreground">Icon</span>
+                </div>
+              </div>
+            </div>
+
+            {/* With Icons */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-medium text-center">With Icons</h3>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <div className="flex flex-col items-center gap-2">
+                  <Button>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 mr-2">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                    Left Icon
+                  </Button>
+                  <span className="text-xs text-muted-foreground">Left Icon</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Button>
+                    Right Icon
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 ml-2">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </Button>
+                  <span className="text-xs text-muted-foreground">Right Icon</span>
+                </div>
+              </div>
+            </div>
+
+            {/* States */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-medium text-center">States</h3>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <div className="flex flex-col items-center gap-2">
+                  <Button disabled>Disabled</Button>
+                  <span className="text-xs text-muted-foreground">Disabled</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Button disabled>
+                    <svg className="mr-2 h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+                    </svg>
+                    Loading
+                  </Button>
+                  <span className="text-xs text-muted-foreground">Loading</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </ComponentPreview>
 
         <ComponentPreview title="Badges" code={badgeCode}>
-          <Badge variant="default">Default</Badge>
-          <Badge variant="secondary">Secondary</Badge>
-          <Badge variant="outline">Outline</Badge>
-          <Badge variant="destructive">Destructive</Badge>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-col items-center gap-2">
+              <Badge variant="default">Default</Badge>
+              <span className="text-xs text-muted-foreground">Default</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <Badge variant="secondary">Secondary</Badge>
+              <span className="text-xs text-muted-foreground">Secondary</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <Badge variant="destructive">Destructive</Badge>
+              <span className="text-xs text-muted-foreground">Destructive</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <Badge variant="outline">Outline</Badge>
+              <span className="text-xs text-muted-foreground">Outline</span>
+            </div>
+          </div>
         </ComponentPreview>
 
         <ComponentPreview title="Tabs" code={tabsCode}>
           <div className="flex justify-center">
-            <div className="w-auto">
+            <div className="w-full max-w-md">
               <Tabs defaultValue="tab1">
-                <TabsList>
+                <TabsList className="w-full justify-center">
                   <TabsTrigger value="tab1">Tab 1</TabsTrigger>
                   <TabsTrigger value="tab2">Tab 2</TabsTrigger>
                   <TabsTrigger value="tab3">Tab 3</TabsTrigger>
@@ -368,30 +482,29 @@ export function EventCard({
         </ComponentPreview>
         
         <ComponentPreview title="Social Preview" code={socialPreviewCode}>
-          <div className="flex flex-col space-y-6 w-full max-w-md mx-auto">
-            <div className="flex flex-col space-y-2 items-center">
-              <Badge variant="outline" className="mb-1">unclaimed</Badge>
+          <div className="flex flex-wrap gap-8 justify-center">
+            <div className="flex flex-col items-center gap-2">
               <SocialPreview status="unclaimed" />
+              <span className="text-xs text-muted-foreground">Unclaimed</span>
             </div>
             
-            <div className="flex flex-col space-y-2 items-center">
-              <Badge variant="outline" className="mb-1">you</Badge>
+            <div className="flex flex-col items-center gap-2">
               <SocialPreview 
                 status="you" 
                 avatars={["https://api.dicebear.com/7.x/avataaars/svg?seed=user1"]} 
               />
+              <span className="text-xs text-muted-foreground">You</span>
             </div>
             
-            <div className="flex flex-col space-y-2 items-center">
-              <Badge variant="outline" className="mb-1">one</Badge>
+            <div className="flex flex-col items-center gap-2">
               <SocialPreview 
                 status="one" 
                 avatars={["https://api.dicebear.com/7.x/avataaars/svg?seed=user2"]} 
               />
+              <span className="text-xs text-muted-foreground">One User</span>
             </div>
             
-            <div className="flex flex-col space-y-2 items-center">
-              <Badge variant="outline" className="mb-1">two</Badge>
+            <div className="flex flex-col items-center gap-2">
               <SocialPreview 
                 status="two" 
                 avatars={[
@@ -399,10 +512,10 @@ export function EventCard({
                   "https://api.dicebear.com/7.x/avataaars/svg?seed=user4"
                 ]} 
               />
+              <span className="text-xs text-muted-foreground">Two Users</span>
             </div>
             
-            <div className="flex flex-col space-y-2 items-center">
-              <Badge variant="outline" className="mb-1">many-plus</Badge>
+            <div className="flex flex-col items-center gap-2">
               <SocialPreview 
                 status="many-plus" 
                 count={5}
@@ -412,33 +525,35 @@ export function EventCard({
                   "https://api.dicebear.com/7.x/avataaars/svg?seed=user7"
                 ]} 
               />
+              <span className="text-xs text-muted-foreground">Many Users</span>
             </div>
           </div>
         </ComponentPreview>
 
         <ComponentPreview title="Event Card" code={eventCardCode}>
-          <div className="w-full max-w-2xl mx-auto">
-            <EventCard
-              iconSrc="https://placehold.co/400x400/2563eb/FFFFFF.png?text=V" 
-              iconAlt="Vector app icon"
-              title="Broadcast a trade"
-              app="Vector"
-              ctaText="Open"
-              xp={48}
-              socialPreviewProps={{
-                status: "many-plus",
-                count: 22,
-                avatars: [
-                  "0x82A978B3f5962A5b0957d9ee9eEf472EE55B42F1",
-                  "0x7d577a597B2742b498Cb5Cf0C26cDCD726d39E6e",
-                  "0xDCEceaf3fc5C0a63d195d69b1A90011b7B19650D"
-                ]
-              }}
-            />
+          <div className="flex justify-center">
+            <div className="max-w-2xl">
+              <EventCard
+                iconSrc="https://placehold.co/400x400/2563eb/FFFFFF.png?text=V" 
+                iconAlt="Vector app icon"
+                title="Broadcast a trade"
+                app="Vector"
+                ctaText="Open"
+                xp={48}
+                socialPreviewProps={{
+                  status: "many-plus",
+                  count: 22,
+                  avatars: [
+                    "0x82A978B3f5962A5b0957d9ee9eEf472EE55B42F1",
+                    "0x7d577a597B2742b498Cb5Cf0C26cDCD726d39E6e",
+                    "0xDCEceaf3fc5C0a63d195d69b1A90011b7B19650D"
+                  ]
+                }}
+              />
+            </div>
           </div>
         </ComponentPreview>
-
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }

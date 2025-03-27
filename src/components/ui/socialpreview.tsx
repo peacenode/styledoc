@@ -88,35 +88,35 @@ function SocialPreview({
         return (
           <>
             <span className="text-sans-xs font-normal text-muted-foreground">completed by</span>
-            <span className="text-sans-xs font-semibold text-primary">you</span>
+            <span className="text-sans-xs font-semibold text-foreground">you</span>
           </>
         )
       case "one":
         return (
           <>
             <span className="text-sans-xs font-normal text-muted-foreground">completed by</span>
-            <span className="text-sans-xs font-semibold text-primary">1 member</span>
+            <span className="text-sans-xs font-semibold text-foreground">1 member</span>
           </>
         )
       case "two":
         return (
           <>
             <span className="text-sans-xs font-normal text-muted-foreground">completed by</span>
-            <span className="text-sans-xs font-semibold text-primary">2 members</span>
+            <span className="text-sans-xs font-semibold text-foreground">2 members</span>
           </>
         )
       case "many":
         return (
           <>
             <span className="text-sans-xs font-normal text-muted-foreground">completed by</span>
-            <span className="text-sans-xs font-semibold text-primary">3 members</span>
+            <span className="text-sans-xs font-semibold text-foreground">3 members</span>
           </>
         )
       case "many-plus":
         return (
           <>
             <span className="text-sans-xs font-normal text-muted-foreground">completed by</span>
-            <span className="text-sans-xs font-semibold text-primary">{count || 0} members</span>
+            <span className="text-sans-xs font-semibold text-foreground">{count || 0} members</span>
           </>
         )
       default:
