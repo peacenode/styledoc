@@ -102,159 +102,159 @@ const config: Config = {
           'font-family': 'var(--font-inter)',
           'font-size': '0.75rem',
           'line-height': '1rem',
-          'letter-spacing': '-0.01em'
+          'letter-spacing': '-0.02em'
         },
         '.text-sans-sm': {
           'font-family': 'var(--font-inter)',
           'font-size': '0.875rem',
           'line-height': '1.25rem',
-          'letter-spacing': '-0.01em'
+          'letter-spacing': '-0.02em'
         },
         '.text-sans-base': {
           'font-family': 'var(--font-inter)',
           'font-size': '1rem',
           'line-height': '1.5rem',
-          'letter-spacing': '-0.01em'
+          'letter-spacing': '-0.03em'
         },
         '.text-sans-lg': {
           'font-family': 'var(--font-inter)',
           'font-size': '1.125rem',
           'line-height': '1.75rem',
-          'letter-spacing': '-0.015em'
+          'letter-spacing': '-0.04em'
         },
         '.text-sans-xl': {
           'font-family': 'var(--font-inter)',
           'font-size': '1.25rem',
           'line-height': '1.75rem',
-          'letter-spacing': '-0.02em'
+          'letter-spacing': '-0.04em'
         },
         '.text-sans-2xl': {
           'font-family': 'var(--font-inter)',
           'font-size': '1.5rem',
           'line-height': '2rem',
-          'letter-spacing': '-0.025em'
+          'letter-spacing': '-0.05em'
         },
         '.text-sans-3xl': {
           'font-family': 'var(--font-inter)',
           'font-size': '1.875rem',
           'line-height': '2.25rem',
-          'letter-spacing': '-0.03em'
+          'letter-spacing': '-0.05em'
         },
         '.text-sans-4xl': {
           'font-family': 'var(--font-inter)',
           'font-size': '2.25rem',
           'line-height': '2.5rem',
-          'letter-spacing': '-0.035em'
+          'letter-spacing': '-0.05em'
         },
         '.text-sans-5xl': {
           'font-family': 'var(--font-inter)',
           'font-size': '3rem',
           'line-height': '1',
-          'letter-spacing': '-0.04em'
+          'letter-spacing': '-0.06em'
         },
         '.text-sans-6xl': {
           'font-family': 'var(--font-inter)',
           'font-size': '3.75rem',
           'line-height': '1',
-          'letter-spacing': '-0.045em'
+          'letter-spacing': '-0.07em'
         },
         '.text-sans-7xl': {
           'font-family': 'var(--font-inter)',
           'font-size': '4.5rem',
           'line-height': '1',
-          'letter-spacing': '-0.05em'
+          'letter-spacing': '-0.07em'
         },
         '.text-sans-8xl': {
           'font-family': 'var(--font-inter)',
           'font-size': '6rem',
           'line-height': '1',
-          'letter-spacing': '-0.055em'
+          'letter-spacing': '-0.07em'
         },
         '.text-sans-9xl': {
           'font-family': 'var(--font-inter)',
           'font-size': '8rem',
           'line-height': '1',
-          'letter-spacing': '-0.06em'
+          'letter-spacing': '-0.08em'
         },
 
         // Serif tokens
         '.text-serif-xs': {
           'font-family': 'Times New Roman',
           'font-size': '0.75rem',
-          'line-height': '1rem',
-          'letter-spacing': '0.02em'
+          'line-height': '1',
+          'letter-spacing': '-0.04em'
         },
         '.text-serif-sm': {
           'font-family': 'Times New Roman',
           'font-size': '0.875rem',
-          'line-height': '1.25rem',
-          'letter-spacing': '0.02em'
+          'line-height': '1',
+          'letter-spacing': '-0.04em'
         },
         '.text-serif-base': {
           'font-family': 'Times New Roman',
           'font-size': '1rem',
-          'line-height': '1.5rem',
-          'letter-spacing': '0.02em'
+          'line-height': '1',
+          'letter-spacing': '-0.04em'
         },
         '.text-serif-lg': {
           'font-family': 'Times New Roman',
           'font-size': '1.125rem',
-          'line-height': '1.75rem',
-          'letter-spacing': '0.015em'
+          'line-height': '1',
+          'letter-spacing': '-0.04em'
         },
         '.text-serif-xl': {
           'font-family': 'Times New Roman',
           'font-size': '1.25rem',
-          'line-height': '1.75rem',
-          'letter-spacing': '0.01em'
+          'line-height': '1',
+          'letter-spacing': '-0.04em'
         },
         '.text-serif-2xl': {
           'font-family': 'Times New Roman',
           'font-size': '1.5rem',
-          'line-height': '2rem',
-          'letter-spacing': '0.005em'
+          'line-height': '.85',
+          'letter-spacing': '-0.075em'
         },
         '.text-serif-3xl': {
           'font-family': 'Times New Roman',
           'font-size': '1.875rem',
-          'line-height': '2.25rem',
-          'letter-spacing': '0'
+          'line-height': '.85',
+          'letter-spacing': '-0.075em'
         },
         '.text-serif-4xl': {
           'font-family': 'Times New Roman',
           'font-size': '2.25rem',
-          'line-height': '2.5rem',
-          'letter-spacing': '-0.005em'
+          'line-height': '.85',
+          'letter-spacing': '-0.075em'
         },
         '.text-serif-5xl': {
           'font-family': 'Times New Roman',
           'font-size': '3rem',
-          'line-height': '1',
-          'letter-spacing': '-0.01em'
+          'line-height': '.85',
+          'letter-spacing': '-0.075em'
         },
         '.text-serif-6xl': {
           'font-family': 'Times New Roman',
           'font-size': '3.75rem',
-          'line-height': '1',
-          'letter-spacing': '-0.015em'
+          'line-height': '.8',
+          'letter-spacing': '-0.08em'
         },
         '.text-serif-7xl': {
           'font-family': 'Times New Roman',
           'font-size': '4.5rem',
-          'line-height': '1',
-          'letter-spacing': '-0.02em'
+          'line-height': '.8',
+          'letter-spacing': '-0.08em'
         },
         '.text-serif-8xl': {
           'font-family': 'Times New Roman',
           'font-size': '6rem',
-          'line-height': '1',
-          'letter-spacing': '-0.025em'
+          'line-height': '.8',
+          'letter-spacing': '-0.09em'
         },
         '.text-serif-9xl': {
           'font-family': 'Times New Roman',
           'font-size': '8rem',
-          'line-height': '1',
-          'letter-spacing': '-0.03em'
+          'line-height': '.8',
+          'letter-spacing': '-0.1em'
         },
 
         // Mono tokens
@@ -268,73 +268,73 @@ const config: Config = {
           'font-family': 'var(--font-geist-mono)',
           'font-size': '0.875rem',
           'line-height': '1.25rem',
-          'letter-spacing': '0'
+          'letter-spacing': '-0.06em'
         },
         '.text-mono-base': {
           'font-family': 'var(--font-geist-mono)',
           'font-size': '1rem',
           'line-height': '1.5rem',
-          'letter-spacing': '0'
+          'letter-spacing': '-0.06em'
         },
         '.text-mono-lg': {
           'font-family': 'var(--font-geist-mono)',
           'font-size': '1.125rem',
           'line-height': '1.75rem',
-          'letter-spacing': '0'
+          'letter-spacing': '-0.07em'
         },
         '.text-mono-xl': {
           'font-family': 'var(--font-geist-mono)',
           'font-size': '1.25rem',
           'line-height': '1.75rem',
-          'letter-spacing': '0'
+          'letter-spacing': '-0.07em'
         },
         '.text-mono-2xl': {
           'font-family': 'var(--font-geist-mono)',
           'font-size': '1.5rem',
           'line-height': '2rem',
-          'letter-spacing': '0'
+          'letter-spacing': '-0.08em'
         },
         '.text-mono-3xl': {
           'font-family': 'var(--font-geist-mono)',
           'font-size': '1.875rem',
           'line-height': '2.25rem',
-          'letter-spacing': '-0.02em'
+          'letter-spacing': '-0.08em'
         },
         '.text-mono-4xl': {
           'font-family': 'var(--font-geist-mono)',
           'font-size': '2.25rem',
           'line-height': '2.5rem',
-          'letter-spacing': '-0.025em'
+          'letter-spacing': '-0.08em'
         },
         '.text-mono-5xl': {
           'font-family': 'var(--font-geist-mono)',
           'font-size': '3rem',
           'line-height': '1',
-          'letter-spacing': '-0.03em'
+          'letter-spacing': '-0.08em'
         },
         '.text-mono-6xl': {
           'font-family': 'var(--font-geist-mono)',
           'font-size': '3.75rem',
           'line-height': '1',
-          'letter-spacing': '-0.035em'
+          'letter-spacing': '-0.08em'
         },
         '.text-mono-7xl': {
           'font-family': 'var(--font-geist-mono)',
           'font-size': '4.5rem',
           'line-height': '1',
-          'letter-spacing': '-0.04em'
+          'letter-spacing': '-0.09em'
         },
         '.text-mono-8xl': {
           'font-family': 'var(--font-geist-mono)',
           'font-size': '6rem',
           'line-height': '1',
-          'letter-spacing': '-0.045em'
+          'letter-spacing': '-0.09em'
         },
         '.text-mono-9xl': {
           'font-family': 'var(--font-geist-mono)',
           'font-size': '8rem',
           'line-height': '1',
-          'letter-spacing': '-0.05em'
+          'letter-spacing': '-0.1em'
         }
       };
 
