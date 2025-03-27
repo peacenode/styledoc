@@ -341,7 +341,7 @@ export const SemanticTypography = () => {
       <div className="space-y-1">
         <Badge variant="outline" className="w-fit">blockquote - Quotation</Badge>
         <blockquote className="mt-6 border-l-2 pl-6 italic text-balance">
-          "The quick brown fox jumps over the lazy dog." — Unknown Author
+          &quot;The quick brown fox jumps over the lazy dog.&quot; — Unknown Author
         </blockquote>
       </div>
       
@@ -439,7 +439,7 @@ export const SemanticTypography = () => {
           </summary>
           <div className="mt-3 group-open:animate-fadeIn">
             <p className="leading-7 text-balance">
-              This is additional information that's hidden until the user clicks to expand it.
+              This is additional information that&apos;s hidden until the user clicks to expand it.
               It can contain any semantic HTML elements like paragraphs, lists, or other content.
             </p>
           </div>

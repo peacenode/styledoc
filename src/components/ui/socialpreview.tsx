@@ -4,7 +4,7 @@ import * as React from "react"
 import { CircleAlert } from "lucide-react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import makeBlockie from 'ethereum-blockies-base64'
 
 const socialPreviewVariants = cva(

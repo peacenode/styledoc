@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { Switch } from "@/components/ui/switch";
-import { Button } from "@/components/ui/button";
 import { Copy, Check } from "lucide-react";
 
 interface ComponentPreviewProps {

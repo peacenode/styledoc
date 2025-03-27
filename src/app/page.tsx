@@ -8,6 +8,11 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SocialPreview } from "@/components/ui/socialpreview";
 import { EventCard } from "@/components/ui/eventcard";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { cva, type VariantProps } from "class-variance-authority";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { cn } from "@/lib/utils";
+
 
 
 export default function Home() {
@@ -169,7 +174,7 @@ import * as React from "react"
 import { CircleAlert } from "lucide-react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar } from "@/components/ui/avatar"
 
 const socialPreviewVariants = cva(
   "flex items-center gap-1.5",

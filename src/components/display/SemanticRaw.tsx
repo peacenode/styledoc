@@ -27,8 +27,8 @@ export const SemanticRaw = () => {
       </p>
 
       <blockquote>
-        "This is a blockquote element. It's styled with a left border and italics to
-        visually set it apart from normal text." — Design System
+        &quot;This is a blockquote element. It&apos;s styled with a left border and italics to
+        visually set it apart from normal text.&quot; — Design System
       </blockquote>
 
       <div>
