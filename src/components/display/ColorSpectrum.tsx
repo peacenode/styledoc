@@ -1,11 +1,14 @@
 import React from 'react';
+import { Badge } from "@/components/ui/badge";
 
 const ColorSpectrum = () => {
   return (
     <div className="w-full space-y-12">
       {/* Color Shade Spectrum */}
       <div>
-        <h3 className="text-lg font-medium mb-6 text-center">Color Shades</h3>
+        <div className="flex justify-center mb-6">
+          <Badge variant="outline" className="text-base px-4 py-1">Color Shades</Badge>
+        </div>
         <div className="w-full flex items-center gap-4 mb-2">
           <div className="w-24" />
           <div className="flex flex-1">
@@ -126,7 +129,9 @@ const ColorSpectrum = () => {
 
       {/* Opacity Variations (Radix-like approach) */}
       <div>
-        <h3 className="text-lg font-medium mb-6 text-center">Opacity Variations</h3>
+        <div className="flex justify-center mb-6">
+          <Badge variant="outline" className="text-base px-4 py-1">Opacity Variations</Badge>
+        </div>
         <div className="w-full flex items-center gap-4 mb-2">
           <div className="w-24" />
           <div className="flex flex-1">

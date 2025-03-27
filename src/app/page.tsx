@@ -340,108 +340,74 @@ export function EventCard({
           componentPath="button"
           code={buttonCode}
         >
-          <div className="space-y-8 max-w-3xl mx-auto">
+          <div className="flex flex-col space-y-8 max-w-3xl mx-auto gap-12">
             {/* Variants */}
             <div className="space-y-4">
-              <h3 className="text-lg font-medium text-center">Button Variants</h3>
+              <div className="flex justify-center">
+                <Badge variant="outline" className="text-base px-4 py-1">Button Variants</Badge>
+              </div>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center">
-                <div className="flex flex-col items-center gap-2">
-                  <Button variant="default">Default</Button>
-                  <span className="text-xs text-muted-foreground">Default</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Button variant="secondary">Secondary</Button>
-                  <span className="text-xs text-muted-foreground">Secondary</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Button variant="outline">Outline</Button>
-                  <span className="text-xs text-muted-foreground">Outline</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Button variant="ghost">Ghost</Button>
-                  <span className="text-xs text-muted-foreground">Ghost</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Button variant="link">Link</Button>
-                  <span className="text-xs text-muted-foreground">Link</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Button variant="destructive">Destructive</Button>
-                  <span className="text-xs text-muted-foreground">Destructive</span>
-                </div>
+                <Button variant="default">Default</Button>
+                <Button variant="secondary">Secondary</Button>
+                <Button variant="outline">Outline</Button>
+                <Button variant="ghost">Ghost</Button>
+                <Button variant="link">Link</Button>
+                <Button variant="destructive">Destructive</Button>
               </div>
             </div>
 
             {/* Sizes */}
             <div className="space-y-4">
-              <h3 className="text-lg font-medium text-center">Button Sizes</h3>
+              <div className="flex justify-center">
+                <Badge variant="outline" className="text-base px-4 py-1">Button Sizes</Badge>
+              </div>
               <div className="flex flex-wrap gap-4 justify-center items-end">
-                <div className="flex flex-col items-center gap-2">
-                  <Button size="sm">Small</Button>
-                  <span className="text-xs text-muted-foreground">Small</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Button size="default">Default</Button>
-                  <span className="text-xs text-muted-foreground">Default</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Button size="lg">Large</Button>
-                  <span className="text-xs text-muted-foreground">Large</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Button size="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                      <path d="M12 5v14M5 12h14" />
-                    </svg>
-                  </Button>
-                  <span className="text-xs text-muted-foreground">Icon</span>
-                </div>
+                <Button size="sm">Small</Button>
+                <Button size="default">Default</Button>
+                <Button size="lg">Large</Button>
+                <Button size="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </Button>
               </div>
             </div>
 
             {/* With Icons */}
             <div className="space-y-4">
-              <h3 className="text-lg font-medium text-center">With Icons</h3>
+              <div className="flex justify-center">
+                <Badge variant="outline" className="text-base px-4 py-1">With Icons</Badge>
+              </div>
               <div className="flex flex-wrap gap-4 justify-center">
-                <div className="flex flex-col items-center gap-2">
-                  <Button>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 mr-2">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                    Left Icon
-                  </Button>
-                  <span className="text-xs text-muted-foreground">Left Icon</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Button>
-                    Right Icon
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 ml-2">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </Button>
-                  <span className="text-xs text-muted-foreground">Right Icon</span>
-                </div>
+                <Button>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 mr-2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                  Left Icon
+                </Button>
+                <Button>
+                  Right Icon
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 ml-2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Button>
               </div>
             </div>
 
             {/* States */}
             <div className="space-y-4">
-              <h3 className="text-lg font-medium text-center">States</h3>
+              <div className="flex justify-center">
+                <Badge variant="outline" className="text-base px-4 py-1">States</Badge>
+              </div>
               <div className="flex flex-wrap gap-4 justify-center">
-                <div className="flex flex-col items-center gap-2">
-                  <Button disabled>Disabled</Button>
-                  <span className="text-xs text-muted-foreground">Disabled</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Button disabled>
-                    <svg className="mr-2 h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
-                    </svg>
-                    Loading
-                  </Button>
-                  <span className="text-xs text-muted-foreground">Loading</span>
-                </div>
+                <Button disabled>Disabled</Button>
+                <Button disabled>
+                  <svg className="mr-2 h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+                  </svg>
+                  Loading
+                </Button>
               </div>
             </div>
           </div>
