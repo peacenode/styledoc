@@ -306,7 +306,7 @@ export function EventCard({
 }`;
 
   return (
-    <main className="container mx-auto py-6 space-y-10">
+    <main className="container mx-auto py-6 px-4 sm:px-6 space-y-10">
       {/* Components Section */}
       <section className="space-y-16">
         <section>
@@ -319,10 +319,10 @@ export function EventCard({
           <Tabs defaultValue="sans" className="w-full">
             <div className="flex justify-center">
               <TabsList className="mb-8">
-                <TabsTrigger value="sans">Inter</TabsTrigger>
-                <TabsTrigger value="serif">Times New Roman</TabsTrigger>
-                <TabsTrigger value="mono">Geist Mono</TabsTrigger>
-                <TabsTrigger value="raw">Semantic HTML</TabsTrigger>
+                <TabsTrigger value="sans">Sans</TabsTrigger>
+                <TabsTrigger value="serif">Serif</TabsTrigger>
+                <TabsTrigger value="mono">Mono</TabsTrigger>
+                <TabsTrigger value="raw">Semantic</TabsTrigger>
               </TabsList>
             </div>
             <TabsContent value="sans">

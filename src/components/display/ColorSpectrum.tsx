@@ -3,14 +3,14 @@ import { Badge } from "@/components/ui/badge";
 
 const ColorSpectrum = () => {
   return (
-    <div className="w-full space-y-12">
+    <div className="w-full space-y-12 px-2 sm:px-0">
       {/* Color Shade Spectrum */}
       <div>
         <div className="flex justify-center mb-6">
           <Badge variant="outline" className="text-base px-4 py-1">Color Shades</Badge>
         </div>
-        <div className="w-full flex items-center gap-4 mb-2">
-          <div className="w-24" />
+        <div className="w-full flex items-center gap-2 mb-2">
+          <div className="w-20" />
           <div className="flex flex-1">
             <div className="flex-1"><div className="text-[10px] text-muted-foreground text-center">50</div></div>
             <div className="flex-1"><div className="text-[10px] text-muted-foreground text-center">100</div></div>
@@ -27,8 +27,8 @@ const ColorSpectrum = () => {
         </div>
         
         {/* Neutral Row */}
-        <div className="w-full flex items-center gap-4">
-          <div className="w-24">
+        <div className="w-full flex items-center gap-2">
+          <div className="w-20">
             <h3 className="text-sm font-medium text-foreground capitalize">neutral</h3>
           </div>
           <div className="flex-1 flex">
@@ -47,8 +47,8 @@ const ColorSpectrum = () => {
         </div>
 
         {/* Green Row */}
-        <div className="w-full flex items-center gap-4">
-          <div className="w-24">
+        <div className="w-full flex items-center gap-2">
+          <div className="w-20">
             <h3 className="text-sm font-medium text-foreground capitalize">green</h3>
           </div>
           <div className="flex-1 flex">
@@ -67,8 +67,8 @@ const ColorSpectrum = () => {
         </div>
 
         {/* Amber Row */}
-        <div className="w-full flex items-center gap-4">
-          <div className="w-24">
+        <div className="w-full flex items-center gap-2">
+          <div className="w-20">
             <h3 className="text-sm font-medium text-foreground capitalize">amber</h3>
           </div>
           <div className="flex-1 flex">
@@ -87,8 +87,8 @@ const ColorSpectrum = () => {
         </div>
 
         {/* Dodger Row */}
-        <div className="w-full flex items-center gap-4">
-          <div className="w-24">
+        <div className="w-full flex items-center gap-2">
+          <div className="w-20">
             <h3 className="text-sm font-medium text-foreground capitalize">dodger</h3>
           </div>
           <div className="flex-1 flex">
@@ -107,8 +107,8 @@ const ColorSpectrum = () => {
         </div>
 
         {/* Hydrant Row */}
-        <div className="w-full flex items-center gap-4">
-          <div className="w-24">
+        <div className="w-full flex items-center gap-2">
+          <div className="w-20">
             <h3 className="text-sm font-medium text-foreground capitalize">hydrant</h3>
           </div>
           <div className="flex-1 flex">
@@ -132,8 +132,8 @@ const ColorSpectrum = () => {
         <div className="flex justify-center mb-6">
           <Badge variant="outline" className="text-base px-4 py-1">Opacity Variations</Badge>
         </div>
-        <div className="w-full flex items-center gap-4 mb-2">
-          <div className="w-24" />
+        <div className="w-full flex items-center gap-2 mb-2">
+          <div className="w-20" />
           <div className="flex flex-1">
             <div className="flex-1"><div className="text-[10px] text-muted-foreground text-center">10%</div></div>
             <div className="flex-1"><div className="text-[10px] text-muted-foreground text-center">20%</div></div>
@@ -149,8 +149,8 @@ const ColorSpectrum = () => {
         </div>
         
         {/* Neutral Opacity Row */}
-        <div className="w-full flex items-center gap-4">
-          <div className="w-24">
+        <div className="w-full flex items-center gap-2">
+          <div className="w-20">
             <h3 className="text-sm font-medium text-foreground capitalize">neutral</h3>
           </div>
           <div className="flex-1 flex">
@@ -168,8 +168,8 @@ const ColorSpectrum = () => {
         </div>
 
         {/* Green Opacity Row */}
-        <div className="w-full flex items-center gap-4">
-          <div className="w-24">
+        <div className="w-full flex items-center gap-2">
+          <div className="w-20">
             <h3 className="text-sm font-medium text-foreground capitalize">green</h3>
           </div>
           <div className="flex-1 flex">
@@ -187,8 +187,8 @@ const ColorSpectrum = () => {
         </div>
 
         {/* Amber Opacity Row */}
-        <div className="w-full flex items-center gap-4">
-          <div className="w-24">
+        <div className="w-full flex items-center gap-2">
+          <div className="w-20">
             <h3 className="text-sm font-medium text-foreground capitalize">amber</h3>
           </div>
           <div className="flex-1 flex">
@@ -206,8 +206,8 @@ const ColorSpectrum = () => {
         </div>
 
         {/* Dodger Opacity Row */}
-        <div className="w-full flex items-center gap-4">
-          <div className="w-24">
+        <div className="w-full flex items-center gap-2">
+          <div className="w-20">
             <h3 className="text-sm font-medium text-foreground capitalize">dodger</h3>
           </div>
           <div className="flex-1 flex">
@@ -225,8 +225,8 @@ const ColorSpectrum = () => {
         </div>
 
         {/* Hydrant Opacity Row */}
-        <div className="w-full flex items-center gap-4">
-          <div className="w-24">
+        <div className="w-full flex items-center gap-2">
+          <div className="w-20">
             <h3 className="text-sm font-medium text-foreground capitalize">hydrant</h3>
           </div>
           <div className="flex-1 flex">
