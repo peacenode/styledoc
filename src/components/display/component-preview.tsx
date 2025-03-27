@@ -51,10 +51,10 @@ export function ComponentPreview({
   };
 
   return (
-    <section>
+    <section className="px-2 sm:px-4">
       <div className="relative mb-8">
-        <h2 className="text-2xl font-bold text-foreground mb-8 text-center">{title}</h2>
-        <div className="absolute right-0 bottom-3 flex items-start gap-2">
+        <h2 className="text-2xl font-bold text-foreground mb-8 text-left sm:text-center">{title}</h2>
+        <div className="absolute right-1 sm:right-2 bottom-3 flex items-start gap-3 px-2 py-1">
           <span className="text-sm text-muted-foreground">
             {showCode ? "Code" : "Preview"}
           </span>
