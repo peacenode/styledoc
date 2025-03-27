@@ -1,19 +1,49 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { Copy, Check } from "lucide-react";
 
 interface ComponentPreviewProps {
   title: string;
-  code: string;
+  componentPath?: string; // Path to the component file
+  code?: string; // Fallback static code
   children: React.ReactNode;
 }
 
-export function ComponentPreview({ title, code, children }: ComponentPreviewProps) {
+export function ComponentPreview({ 
+  title, 
+  componentPath, 
+  code: staticCode, 
+  children 
+}: ComponentPreviewProps) {
   const [showCode, setShowCode] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [code, setCode] = useState(staticCode || "");
+  
+  useEffect(() => {
+    async function loadComponentCode() {
+      if (componentPath) {
+        try {
+          // Use Next.js public folder or API route to serve component files
+          const response = await fetch(`/api/component-code?path=${encodeURIComponent(componentPath)}`);
+          if (response.ok) {
+            const data = await response.json();
+            setCode(data.code);
+          } else {
+            console.error("Failed to load component code");
+          }
+        } catch (error) {
+          console.error("Error loading component code:", error);
+        }
+      }
+    }
+    
+    if (componentPath) {
+      loadComponentCode();
+    }
+  }, [componentPath]);
 
   const copyToClipboard = async () => {
     await navigator.clipboard.writeText(code);

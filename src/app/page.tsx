@@ -335,7 +335,11 @@ export function EventCard({
           </Tabs>
         </section>
 
-        <ComponentPreview title="Buttons" code={buttonCode}>
+        <ComponentPreview 
+          title="Buttons" 
+          componentPath="button"
+          code={buttonCode}
+        >
           <div className="space-y-8 max-w-3xl mx-auto">
             {/* Variants */}
             <div className="space-y-4">
@@ -443,28 +447,24 @@ export function EventCard({
           </div>
         </ComponentPreview>
 
-        <ComponentPreview title="Badges" code={badgeCode}>
+        <ComponentPreview 
+          title="Badges" 
+          componentPath="badge"
+          code={badgeCode}
+        >
           <div className="flex flex-wrap gap-4 justify-center">
-            <div className="flex flex-col items-center gap-2">
-              <Badge variant="default">Default</Badge>
-              <span className="text-xs text-muted-foreground">Default</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Badge variant="secondary">Secondary</Badge>
-              <span className="text-xs text-muted-foreground">Secondary</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Badge variant="destructive">Destructive</Badge>
-              <span className="text-xs text-muted-foreground">Destructive</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Badge variant="outline">Outline</Badge>
-              <span className="text-xs text-muted-foreground">Outline</span>
-            </div>
+            <Badge variant="default">Default</Badge>
+            <Badge variant="secondary">Secondary</Badge>
+            <Badge variant="destructive">Destructive</Badge>
+            <Badge variant="outline">Outline</Badge>
           </div>
         </ComponentPreview>
 
-        <ComponentPreview title="Tabs" code={tabsCode}>
+        <ComponentPreview 
+          title="Tabs" 
+          componentPath="tabs"
+          code={tabsCode}
+        >
           <div className="flex justify-center">
             <div className="w-full max-w-md">
               <Tabs defaultValue="tab1">
@@ -481,30 +481,35 @@ export function EventCard({
           </div>
         </ComponentPreview>
         
-        <ComponentPreview title="Social Preview" code={socialPreviewCode}>
-          <div className="flex flex-wrap gap-8 justify-center">
-            <div className="flex flex-col items-center gap-2">
+        <ComponentPreview 
+          title="Social Preview" 
+          componentPath="socialpreview"
+          code={socialPreviewCode}
+        >
+          <div className="flex flex-col space-y-6 w-full max-w-md mx-auto">
+            <div className="flex flex-col space-y-2 items-center">
+              <Badge variant="outline" className="mb-1">unclaimed</Badge>
               <SocialPreview status="unclaimed" />
-              <span className="text-xs text-muted-foreground">Unclaimed</span>
             </div>
             
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col space-y-2 items-center">
+              <Badge variant="outline" className="mb-1">you</Badge>
               <SocialPreview 
                 status="you" 
                 avatars={["https://api.dicebear.com/7.x/avataaars/svg?seed=user1"]} 
               />
-              <span className="text-xs text-muted-foreground">You</span>
             </div>
             
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col space-y-2 items-center">
+              <Badge variant="outline" className="mb-1">one</Badge>
               <SocialPreview 
                 status="one" 
                 avatars={["https://api.dicebear.com/7.x/avataaars/svg?seed=user2"]} 
               />
-              <span className="text-xs text-muted-foreground">One User</span>
             </div>
             
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col space-y-2 items-center">
+              <Badge variant="outline" className="mb-1">two</Badge>
               <SocialPreview 
                 status="two" 
                 avatars={[
@@ -512,10 +517,10 @@ export function EventCard({
                   "https://api.dicebear.com/7.x/avataaars/svg?seed=user4"
                 ]} 
               />
-              <span className="text-xs text-muted-foreground">Two Users</span>
             </div>
             
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col space-y-2 items-center">
+              <Badge variant="outline" className="mb-1">many-plus</Badge>
               <SocialPreview 
                 status="many-plus" 
                 count={5}
@@ -525,14 +530,17 @@ export function EventCard({
                   "https://api.dicebear.com/7.x/avataaars/svg?seed=user7"
                 ]} 
               />
-              <span className="text-xs text-muted-foreground">Many Users</span>
             </div>
           </div>
         </ComponentPreview>
 
-        <ComponentPreview title="Event Card" code={eventCardCode}>
-          <div className="flex justify-center">
-            <div className="max-w-2xl">
+        <ComponentPreview 
+          title="Event Card" 
+          componentPath="eventcard"
+          code={eventCardCode}
+        >
+          <div className="flex justify-center w-full">
+            <div className="w-full max-w-2xl">
               <EventCard
                 iconSrc="https://placehold.co/400x400/2563eb/FFFFFF.png?text=V" 
                 iconAlt="Vector app icon"
@@ -549,6 +557,7 @@ export function EventCard({
                     "0xDCEceaf3fc5C0a63d195d69b1A90011b7B19650D"
                   ]
                 }}
+                className="w-full"
               />
             </div>
           </div>

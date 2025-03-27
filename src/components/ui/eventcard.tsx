@@ -45,7 +45,7 @@ export function EventCard({
       {...props}
     >
       <div className="flex items-start justify-between">
-        <div className="flex gap-4">
+        <div className="flex gap-2">
           {/* Icon/Image section - only shown if iconSrc is provided */}
           {iconSrc && (
             <div className="flex-shrink-0 h-16 w-16 overflow-hidden rounded-sm">
