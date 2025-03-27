@@ -346,7 +346,7 @@ export function EventCard({
               <div className="flex justify-center">
                 <Badge variant="outline" className="text-base px-4 py-1">Button Variants</Badge>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center">
+              <div className="flex flex-wrap gap-4 items-center justify-center">
                 <Button variant="default">Default</Button>
                 <Button variant="secondary">Secondary</Button>
                 <Button variant="outline">Outline</Button>
@@ -361,15 +361,15 @@ export function EventCard({
               <div className="flex justify-center">
                 <Badge variant="outline" className="text-base px-4 py-1">Button Sizes</Badge>
               </div>
-              <div className="flex flex-wrap gap-4 justify-center items-end">
+              <div className="flex flex-wrap gap-4 justify-center items-center">
                 <Button size="sm">Small</Button>
                 <Button size="default">Default</Button>
-                <Button size="lg">Large</Button>
                 <Button size="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
                     <path d="M12 5v14M5 12h14" />
                   </svg>
                 </Button>
+                <Button size="lg">Large</Button>
               </div>
             </div>
 
@@ -378,7 +378,7 @@ export function EventCard({
               <div className="flex justify-center">
                 <Badge variant="outline" className="text-base px-4 py-1">With Icons</Badge>
               </div>
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-wrap gap-4 justify-center items-center">
                 <Button>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 mr-2">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -399,7 +399,7 @@ export function EventCard({
               <div className="flex justify-center">
                 <Badge variant="outline" className="text-base px-4 py-1">States</Badge>
               </div>
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-wrap gap-4 justify-center items-center">
                 <Button disabled>Disabled</Button>
                 <Button disabled>
                   <svg className="mr-2 h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
