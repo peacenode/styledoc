@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import ColorSpectrum from '@/components/display/ColorSpectrum';
 import { SansTypography, SerifTypography, MonoTypography } from '@/components/display/Typography';
@@ -8,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SocialPreview } from "@/components/ui/socialpreview";
 import { EventCard } from "@/components/ui/eventcard";
+import { DsTicker } from "@/components/ui/ds-ticker";
 
 
 export default function Home() {
@@ -215,90 +218,56 @@ export { SocialPreview }`;
   // Add EventCard code snippet
   const eventCardCode = `"use client"
 
-import * as React from "react"
-import { SocialPreview } from "@/components/ui/socialpreview"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { EventCard } from "@/components/ui/eventcard";
 
-interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Icon URL or image source */
-  iconSrc?: string
-  /** Alt text for the icon */
-  iconAlt?: string
-  /** Icon background color (optional) */
-  iconBgColor?: string
-  /** Main title of the event */
-  title: string
-  /** App or source name */
-  app: string
-  /** Primary call-to-action button text */
-  ctaText: string
-  /** Primary call-to-action button onClick function */
-  onCtaClick?: () => void
-  /** XP reward amount (without the + symbol) */
-  xp?: number
-  /** Props to pass to the SocialPreview component */
-  socialPreviewProps?: React.ComponentProps<typeof SocialPreview>
-}
-
-export function EventCard({
-  className,
-  iconSrc,
-  iconAlt,
-  iconBgColor,
-  title,
-  app,
-  ctaText = "Open",
-  onCtaClick,
-  xp,
-  socialPreviewProps,
-  ...props
-}: EventCardProps) {
+// Basic event card with default props
+export default function EventCardDemo() {
   return (
-    <div 
-      className={cn(
-        "flex flex-col rounded-lg border p-6 shadow-sm",
-        className
-      )}
-      {...props}
-    >
-      <div className="flex items-start justify-between">
-        <div className="flex gap-4">
-          {/* Icon/Image section */}
-          {iconSrc && (
-            <div className="flex-shrink-0 h-16 w-16 overflow-hidden rounded">
-              <img src={iconSrc} alt={iconAlt} className="w-full h-full object-cover" />
-            </div>
-          )}
-          
-          {/* Content section */}
-          <div className="flex flex-col">
-            <h3 className="text-xl font-semibold">{title}</h3>
-            <p className="text-muted-foreground">{app}</p>
-            
-            {/* Social preview */}
-            {socialPreviewProps && (
-              <div className="mt-4">
-                <SocialPreview {...socialPreviewProps} />
-              </div>
-            )}
-          </div>
-        </div>
-        
-        {/* Action section */}
-        <div className="flex flex-col items-end gap-2">
-          <Button onClick={onCtaClick}>
-            {ctaText}
-          </Button>
-          
-          {xp !== undefined && (
-            <span className="text-muted-foreground text-sm">+{xp}XP</span>
-          )}
-        </div>
-      </div>
+    <div className="space-y-4">
+      <EventCard
+        iconSrc="https://pbs.twimg.com/profile_images/1636029767936565248/xwA6mA4P.jpg"
+        title="Provide 0.01 ETH Liquidity for $HONK"
+        app="Uniswap v3"
+        ctaText="Open"
+        xp={150}
+        socialPreviewProps={{
+          status: "you",
+          count: 4,
+          avatars: [
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face",
+            "https://images.unsplash.com/photo-1494790108755-2616b612b1ef?w=32&h=32&fit=crop&crop=face",
+            "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face",
+            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=32&h=32&fit=crop&crop=face"
+          ]
+        }}
+      />
     </div>
   )
-}`;
+}
+`;
+
+  const dsTickerCode = `"use client";
+
+import { DsTicker } from "@/components/ui/ds-ticker";
+import { Badge } from "@/components/ui/badge";
+
+// Chip variant (default) - shows icon + ticker in bordered badge
+<DsTicker 
+  chainId="ethereum" 
+  contractAddress="0x72e4f9F808C49A2a61dE9C5896298920Dc4EEEa9" 
+/>
+
+// Price change variant - shows icon + ticker + price change (no border)
+<DsTicker 
+  chainId="ethereum" 
+  contractAddress="0x72e4f9F808C49A2a61dE9C5896298920Dc4EEEa9" 
+  variant="price-change"
+/>
+
+// Custom tokens - just use Badge directly
+<Badge variant="outline">CUSTOM</Badge>`;
 
   return (
     <main className="container mx-auto py-6 space-y-10">
@@ -335,8 +304,8 @@ export function EventCard({
           </Tabs>
         </section>
 
-        <ComponentPreview 
-          title="Buttons" 
+        <ComponentPreview
+          title="Buttons"
           componentPath="button"
           code={buttonCode}
         >
@@ -413,8 +382,8 @@ export function EventCard({
           </div>
         </ComponentPreview>
 
-        <ComponentPreview 
-          title="Badges" 
+        <ComponentPreview
+          title="Badges"
           componentPath="badge"
           code={badgeCode}
         >
@@ -426,8 +395,8 @@ export function EventCard({
           </div>
         </ComponentPreview>
 
-        <ComponentPreview 
-          title="Tabs" 
+        <ComponentPreview
+          title="Tabs"
           componentPath="tabs"
           code={tabsCode}
         >
@@ -446,9 +415,9 @@ export function EventCard({
             </div>
           </div>
         </ComponentPreview>
-        
-        <ComponentPreview 
-          title="Social Preview" 
+
+        <ComponentPreview
+          title="Social Preview"
           componentPath="socialpreview"
           code={socialPreviewCode}
         >
@@ -457,58 +426,58 @@ export function EventCard({
               <Badge variant="outline" className="mb-1">unclaimed</Badge>
               <SocialPreview status="unclaimed" />
             </div>
-            
+
             <div className="flex flex-col space-y-2 items-center">
               <Badge variant="outline" className="mb-1">you</Badge>
-              <SocialPreview 
-                status="you" 
-                avatars={["https://api.dicebear.com/7.x/avataaars/svg?seed=user1"]} 
+              <SocialPreview
+                status="you"
+                avatars={["https://api.dicebear.com/7.x/avataaars/svg?seed=user1"]}
               />
             </div>
-            
+
             <div className="flex flex-col space-y-2 items-center">
               <Badge variant="outline" className="mb-1">one</Badge>
-              <SocialPreview 
-                status="one" 
-                avatars={["https://api.dicebear.com/7.x/avataaars/svg?seed=user2"]} 
+              <SocialPreview
+                status="one"
+                avatars={["https://api.dicebear.com/7.x/avataaars/svg?seed=user2"]}
               />
             </div>
-            
+
             <div className="flex flex-col space-y-2 items-center">
               <Badge variant="outline" className="mb-1">two</Badge>
-              <SocialPreview 
-                status="two" 
+              <SocialPreview
+                status="two"
                 avatars={[
                   "https://api.dicebear.com/7.x/avataaars/svg?seed=user3",
                   "https://api.dicebear.com/7.x/avataaars/svg?seed=user4"
-                ]} 
+                ]}
               />
             </div>
-            
+
             <div className="flex flex-col space-y-2 items-center">
               <Badge variant="outline" className="mb-1">many-plus</Badge>
-              <SocialPreview 
-                status="many-plus" 
+              <SocialPreview
+                status="many-plus"
                 count={5}
                 avatars={[
                   "https://api.dicebear.com/7.x/avataaars/svg?seed=user5",
                   "https://api.dicebear.com/7.x/avataaars/svg?seed=user6",
                   "https://api.dicebear.com/7.x/avataaars/svg?seed=user7"
-                ]} 
+                ]}
               />
             </div>
           </div>
         </ComponentPreview>
 
-        <ComponentPreview 
-          title="Event Card" 
+        <ComponentPreview
+          title="Event Card"
           componentPath="eventcard"
           code={eventCardCode}
         >
           <div className="flex justify-center w-full">
             <div className="w-full max-w-2xl">
               <EventCard
-                iconSrc="https://placehold.co/400x400/2563eb/FFFFFF.png?text=V" 
+                iconSrc="https://placehold.co/400x400/2563eb/FFFFFF.png?text=V"
                 iconAlt="Vector app icon"
                 title="Broadcast a trade"
                 app="Vector"
@@ -528,7 +497,60 @@ export function EventCard({
             </div>
           </div>
         </ComponentPreview>
-      </section>
-    </main>
+
+        <ComponentPreview
+          title="DS Ticker"
+          code={dsTickerCode}
+        >
+          <div className="flex flex-col space-y-8 max-w-3xl mx-auto">
+            {/* Chip variants */}
+            <div className="flex flex-wrap gap-4 justify-center items-center">
+              <DsTicker
+                chainId="ethereum"
+                contractAddress="0x72e4f9F808C49A2a61dE9C5896298920Dc4EEEa9"
+              />
+              <DsTicker
+                chainId="ethereum"
+                contractAddress="0xE0f63A424a4439cBE457D80E4f4b51aD25b2c56C"
+              />
+              <DsTicker
+                chainId="solana"
+                contractAddress="4ikwYoNvoGEwtMbziUyYBTz1zRM6nmxspsfw9G7Bpump"
+              />
+            </div>
+
+            {/* Price change variants */}
+            <div className="flex flex-wrap gap-4 justify-center items-center">
+              <DsTicker
+                chainId="ethereum"
+                contractAddress="0x72e4f9F808C49A2a61dE9C5896298920Dc4EEEa9"
+                variant="price-change"
+              />
+              <DsTicker
+                chainId="ethereum"
+                contractAddress="0xE0f63A424a4439cBE457D80E4f4b51aD25b2c56C"
+                variant="price-change"
+              />
+              <DsTicker
+                chainId="solana"
+                contractAddress="4ikwYoNvoGEwtMbziUyYBTz1zRM6nmxspsfw9G7Bpump"
+                variant="price-change"
+              />
+            </div>
+
+            {/* Loading states */}
+            <div className="flex flex-wrap gap-4 justify-center items-center">
+              {/* Mock loading states to show the shimmer effect */}
+              <div className="relative overflow-hidden bg-foreground/10 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent before:transform before:skew-x-12 h-6 w-16 rounded-full border" />
+              <div className="flex items-center gap-1.5">
+                <div className="relative overflow-hidden bg-foreground/10 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent before:transform before:skew-x-12 w-4 h-4 rounded-full" />
+                <div className="relative overflow-hidden bg-foreground/10 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent before:transform before:skew-x-12 h-4 w-8 rounded" />
+                <div className="relative overflow-hidden bg-foreground/10 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent before:transform before:skew-x-12 h-4 w-12 rounded" />
+              </div>
+            </div>
+          </div>
+        </ComponentPreview>
+      </section >
+    </main >
   );
 }
